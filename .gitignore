@@ -1,0 +1,20 @@
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# ===== Docker =====
+.env
+*.log
+docker-compose.override.yml
+
+# ===== Kafka / Data =====
+data/*
+!data/.gitkeep
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
