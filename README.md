@@ -58,7 +58,7 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 ## Proof of Execution (Screenshots)
 
 ### Environment ready (WSL2 + Ubuntu)
-![WSL Ubuntu installed](A2_wsl_ubuntu_installed.png)
+![WSL Ubuntu installed](A2_ws1_ubuntu_installed.png)
 
 ### Docker installed and running
 ![Docker Desktop running](01_docker_desktop_open.png)
