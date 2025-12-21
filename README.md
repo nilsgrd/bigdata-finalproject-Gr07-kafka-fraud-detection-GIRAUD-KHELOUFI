@@ -25,7 +25,7 @@ In our project, Kafka acts as the central **streaming backbone** between the tra
 
 ### Prerequisites
 - Docker Desktop (Windows)
-- WSL2 (Ubuntu) (for running Linux commands on Windows)
+- Ubuntu
 - Git
   
 ### Run Kafka locally (Docker Compose)
@@ -145,5 +145,7 @@ To demonstrate “update” and “delete” semantics, we produced multiple eve
 (`CREATED`, `UPDATED`, `DELETED`) and then replayed the topic with `--from-beginning`.
 
 We also learned the difference between **messages with no key** (shown as `null`) and **keyed messages**.
-When we enabled `parse.key=true` and `print.key=true`, Kafka displayed the key (e.g., `10`), which is useful for partitioning and for log-compacted topics
+When we enabled `parse.key=true` and `print.key=true`, Kafka displayed the key (e.g., `10`), which is useful for partitioning and for log-compacted topics.
+This was important for us because keys directly impact partitioning, ordering guarantees per key, and enable log compaction patterns.
+
 
