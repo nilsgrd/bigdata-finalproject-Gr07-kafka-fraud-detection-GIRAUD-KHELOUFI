@@ -94,9 +94,9 @@ We also tested **message keys**:
 
 ![Null vs keyed messages (print.key=true)](screenshots_keyed_messages_null_vs_key.png)
 
-![Topic v2 + keyed producer/consumer commands](screenshots/keyed_messages_topic_v2_commands.png)
+![Topic v2 + keyed producer/consumer commands](screenshots_keyed_messages_topic_v2_commands.png)
 
-![Key displayed on consumer output](screenshots/keyed_messages_output_keyed.png)
+![Key displayed on consumer output](screenshots_keyed_messages_output_keyed.png)
 
 
 ### 7) Sample input / output files
