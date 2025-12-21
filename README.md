@@ -34,9 +34,7 @@ In our project, Kafka acts as the central **streaming backbone** between the tra
 git clone https://github.com/nilsgrd/bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI.git
 cd bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI
 
-2. Start Kafka and Zookeeper:
 docker compose up -d
 
-3. Check that containers are running:
 docker compose ps
 ```
