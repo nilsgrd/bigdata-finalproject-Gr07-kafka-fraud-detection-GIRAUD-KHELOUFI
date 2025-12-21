@@ -53,7 +53,7 @@ docker exec -i real-time-fraud-kafka-kafka-1 bash -lc "echo '{\"id\":10,\"event\
 
 # 3) Consume from the beginning (run in another terminal)
 docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer --bootstrap-server localhost:9092 --topic bank-transactions --from-beginning"
-
+```
 
 ## Proof of Execution (Screenshots)
 
