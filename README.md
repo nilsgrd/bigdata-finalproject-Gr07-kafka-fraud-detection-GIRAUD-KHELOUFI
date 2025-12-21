@@ -29,7 +29,7 @@ In our project, Kafka acts as the central **streaming backbone** between the tra
 - Git
   
 ### Run Kafka locally (Docker Compose)
-1. Clone the repository:
+
 ```bash
 git clone https://github.com/nilsgrd/bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI.git
 cd bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI
