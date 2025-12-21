@@ -38,3 +38,19 @@ docker compose up -d
 
 docker compose ps
 ```
+
+## Minimal Working Example (Kafka CLI)
+
+```bash
+# 1) Create (or list) the topic
+docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-topics --bootstrap-server localhost:9092 --list"
+docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-topics --bootstrap-server localhost:9092 --create --topic bank-transactions --partitions 1 --replication-factor 1"
+
+# 2) Produce 3 sample events (CREATED / UPDATED / DELETED)
+docker exec -i real-time-fraud-kafka-kafka-1 bash -lc "echo '{\"id\":10,\"user\":\"A\",\"amount\":120,\"event\":\"CREATED\"}' | kafka-console-producer --bootstrap-server localhost:9092 --topic bank-transactions"
+docker exec -i real-time-fraud-kafka-kafka-1 bash -lc "echo '{\"id\":10,\"user\":\"A\",\"amount\":500,\"event\":\"UPDATED\"}' | kafka-console-producer --bootstrap-server localhost:9092 --topic bank-transactions"
+docker exec -i real-time-fraud-kafka-kafka-1 bash -lc "echo '{\"id\":10,\"event\":\"DELETED\"}' | kafka-console-producer --bootstrap-server localhost:9092 --topic bank-transactions"
+
+# 3) Consume from the beginning (run in another terminal)
+docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer --bootstrap-server localhost:9092 --topic bank-transactions --from-beginning"
+
