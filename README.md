@@ -21,3 +21,22 @@ We selected **Apache Kafka** because it is a core Big Data tool for **real-time 
 
 In our project, Kafka acts as the central **streaming backbone** between the transaction producer and the fraud detection consumer.
 
+## Installation & Setup
+
+### Prerequisites
+- Docker Desktop (Windows)
+- WSL2 (Ubuntu) (for running Linux commands on Windows)
+- Git
+  
+### Run Kafka locally (Docker Compose)
+1. Clone the repository:
+```bash
+git clone https://github.com/nilsgrd/bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI.git
+cd bigdata-finalproject-Gr07-kafka-fraud-detection-GIRAUD-KHELOUFI
+
+2. Start Kafka and Zookeeper:
+docker compose up -d
+
+3. Check that containers are running:
+docker compose ps
+```
