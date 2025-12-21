@@ -86,5 +86,23 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 ![Sample transactions](sample_transactions.png)
 ![Sample fraud alerts](sample_fraud_alerts.png)
 
+## Kafka in a Big Data Ecosystem
+
+Apache Kafka is mainly used as an **event streaming backbone**. It sits between data producers (apps, services, IoT, logs) and multiple consumers (analytics, monitoring, databases).
+
+In this project:
+- **Producer** = a transaction simulator that publishes events to a Kafka topic
+- **Kafka topic** = a durable stream of transactions (append-only log)
+- **Consumer** = a fraud detection service that reads events in real time and raises alerts
+
+In a real Big Data architecture, Kafka is often connected to:
+- **Stream processing** (Spark Structured Streaming / Flink / Kafka Streams) to run more advanced fraud detection models
+- **Storage layers** (HDFS / S3 / data lake) for long-term history and auditing
+- **Databases / Search** (PostgreSQL / Elasticsearch) to store alerts and make them searchable
+- **Dashboards / monitoring** (Grafana / Kibana) for real-time alert visualization
+
+Kafka makes the system scalable because multiple consumers can read the same topic independently, and processing can be parallelized by partitions.
+
+
 
 
