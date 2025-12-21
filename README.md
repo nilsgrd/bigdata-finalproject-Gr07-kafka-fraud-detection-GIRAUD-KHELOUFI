@@ -121,5 +121,12 @@ Once Kafka finished initializing, topic creation and message publishing worked n
 **Issue:** When consuming with `--from-beginning`, we sometimes saw old messages from previous tests, which was confusing during validation.
 **Solution:** We treated this as normal Kafka behavior (durable log). To get a clean run, we either used a new topic name, or restarted from a clean state by removing containers/volumes (when needed).
 
+## My Setup Notes
 
+During this project, we learned that Kafka works as an **append-only event log**: messages are not modified in place.
+To demonstrate “update” and “delete” semantics, we produced multiple events for the same transaction ID using the Kafka CLI
+(`CREATED`, `UPDATED`, `DELETED`) and then replayed the topic with `--from-beginning`.
+
+We also learned the difference between **messages with no key** (shown as `null`) and **keyed messages**.
+When we enabled `parse.key=true` and `print.key=true`, Kafka displayed the key (e.g., `10`), which is useful for partitioning and for log-compacted topics
 
