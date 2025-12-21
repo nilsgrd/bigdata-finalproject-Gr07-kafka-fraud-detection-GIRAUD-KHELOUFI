@@ -103,6 +103,23 @@ In a real Big Data architecture, Kafka is often connected to:
 
 Kafka makes the system scalable because multiple consumers can read the same topic independently, and processing can be parallelized by partitions.
 
+## Challenges Encountered and Solutions
+
+### 1) Kafka not reachable from the host (wrong advertised listeners / wrong bootstrap-server)
+**Issue:** Our producer/consumer could not connect to Kafka (timeouts / connection refused) even though containers were running.
+This usually happens when Kafka is configured with an incorrect `advertised.listeners` or when the wrong bootstrap address is used.
+**Solution:** We verified the Kafka configuration in `docker-compose.yml` and used the correct broker address (`localhost:9092`) from the host.
+We also checked containers and ports with `docker compose ps`.
+
+### 2) Containers running but Kafka not “ready” yet (race condition at startup)
+**Issue:** Right after `docker compose up -d`, Kafka commands sometimes failed because the broker was still starting.
+**Solution:** We waited a few seconds and retried, and we monitored the startup logs with:
+`docker compose logs -f kafka`
+Once Kafka finished initializing, topic creation and message publishing worked normally.
+
+### 3) Data/Topic state kept between runs (unexpected old messages)
+**Issue:** When consuming with `--from-beginning`, we sometimes saw old messages from previous tests, which was confusing during validation.
+**Solution:** We treated this as normal Kafka behavior (durable log). To get a clean run, we either used a new topic name, or restarted from a clean state by removing containers/volumes (when needed).
 
 
 
