@@ -57,26 +57,37 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 
 ## Proof of Execution (Screenshots)
 
-### Environment ready (WSL2 + Ubuntu)
-![WSL Ubuntu installed](A2_ws1_ubuntu_installed.png)
-
-### Docker installed and running
+### 1) Environment ready
 ![Docker Desktop running](01_docker_desktop_open.png)
+![WSL2 Ubuntu installed](A2_ws1_ubuntu_installed.png)
 
-### Kafka started with Docker Compose
-![Docker Compose up](docker_compose_up_ok_terminal.png)
+### 2) Project / Kafka configuration
+![Kafka environment / config](kafka_env.png)
+![Docker Compose configuration (code)](docker_compose_up_ok_code.png)
 
-### Kafka & Zookeeper running
-![Kafka running (docker compose ps)](kafka_running_terminal.png)
+### 3) Start Kafka with Docker Compose
+![Docker Compose up (terminal)](docker_compose_up_ok_terminal.png)
 
-### Kafka CLI producer / consumer working
-![Execution proof](execution_proof.png)
+### 4) Kafka services running
+![Kafka running](kafka_running.png)
+![Kafka running (terminal)](kafka_running_terminal.png)
 
-### Sample input and output (project files)
-**Sample input (transactions):**
+### 5) Producer & Consumer implementation
+![Producer code](producer.png)
+![Fraud detection consumer code](consumer_fraud_detector.png)
+
+### 6) Execution proofs (CLI tests)
+![Execution proof 1](execution_proof.png)
+![Execution proof 2](execution_proof_2.png)
+![Execution proof 3](execution_proof_3.png)
+![Execution proof 4](execution_proof_4.png)
+
+### 7) Issue encountered (example)
+![Kafka error (troubleshooting)](kafka_error.png)
+
+### 8) Sample input / output files
 ![Sample transactions](sample_transactions.png)
-
-**Sample output (fraud alerts):**
 ![Sample fraud alerts](sample_fraud_alerts.png)
+
 
 
