@@ -54,3 +54,29 @@ docker exec -i real-time-fraud-kafka-kafka-1 bash -lc "echo '{\"id\":10,\"event\
 # 3) Consume from the beginning (run in another terminal)
 docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer --bootstrap-server localhost:9092 --topic bank-transactions --from-beginning"
 
+
+## Proof of Execution (Screenshots)
+
+### Environment ready (WSL2 + Ubuntu)
+![WSL Ubuntu installed](A2_wsl_ubuntu_installed.png)
+
+### Docker installed and running
+![Docker Desktop running](01_docker_desktop_open.png)
+
+### Kafka started with Docker Compose
+![Docker Compose up](docker_compose_up_ok_terminal.png)
+
+### Kafka & Zookeeper running
+![Kafka running (docker compose ps)](kafka_running_terminal.png)
+
+### Kafka CLI producer / consumer working
+![Execution proof](execution_proof.png)
+
+### Sample input and output (project files)
+**Sample input (transactions):**
+![Sample transactions](sample_transactions.png)
+
+**Sample output (fraud alerts):**
+![Sample fraud alerts](sample_fraud_alerts.png)
+
+
