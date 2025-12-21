@@ -92,7 +92,7 @@ We also tested **message keys**:
 - older messages without a key appear with `null`
 - keyed messages display the key (e.g., `10`) when using `print.key=true`
 
-![Null vs keyed messages (print.key=true)](screenshots/keyed_messages_null_vs_key.png)
+![Null vs keyed messages (print.key=true)](screenshots_keyed_messages_null_vs_key.png)
 
 ![Topic v2 + keyed producer/consumer commands](screenshots/keyed_messages_topic_v2_commands.png)
 
