@@ -82,6 +82,23 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 ![Execution proof 3](execution_proof_3.png)
 ![Execution proof 4](execution_proof_4.png)
 
+### 6b) Keyed Events & Update Semantics (Append-only log)
+
+This project also demonstrates an **append-only event log** pattern:
+we do not update or delete a record in place. Instead, we publish new events
+for the same transaction id (`CREATED`, `UPDATED`, `DELETED`).
+
+We also tested **message keys**:
+- older messages without a key appear with `null`
+- keyed messages display the key (e.g., `10`) when using `print.key=true`
+
+![Null vs keyed messages (print.key=true)](screenshots/keyed_messages_null_vs_key.png)
+
+![Topic v2 + keyed producer/consumer commands](screenshots/keyed_messages_topic_v2_commands.png)
+
+![Key displayed on consumer output](screenshots/keyed_messages_output_keyed.png)
+
+
 ### 7) Sample input / output files
 ![Sample transactions](sample_transactions.png)
 ![Sample fraud alerts](sample_fraud_alerts.png)
