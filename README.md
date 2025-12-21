@@ -65,7 +65,7 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 ![Kafka environment / config](kafka_env.png)
 ![Docker Compose configuration (code)](docker_compose_up_ok_code.png)
 
-### 3) Start Kafka with Docker Compose
+### 3) Project folder ready / docker-compose.yml present
 ![Docker Compose up (terminal)](docker_compose_up_ok_terminal.png)
 
 ### 4) Kafka services running
@@ -82,10 +82,7 @@ docker exec -it real-time-fraud-kafka-kafka-1 bash -lc "kafka-console-consumer -
 ![Execution proof 3](execution_proof_3.png)
 ![Execution proof 4](execution_proof_4.png)
 
-### 7) Issue encountered (example)
-![Kafka error (troubleshooting)](kafka_error.png)
-
-### 8) Sample input / output files
+### 7) Sample input / output files
 ![Sample transactions](sample_transactions.png)
 ![Sample fraud alerts](sample_fraud_alerts.png)
 
